@@ -32,10 +32,6 @@ namespace RotaryLcd.Services
         public Task StartAsync(CancellationToken cancellationToken)
         {
             this.Logger.LogInformation("Starting program");
-            this.RotaryEncoder.RotaryChangedEvent += (Object sender, RotaryChangeEventArgs e) => 
-            { 
-                if (e.RotaryChangeEventType == RotaryChangeEventType.SwitchReleased) Environment.Exit(0); 
-            };
             return Task.CompletedTask;
         }
 
